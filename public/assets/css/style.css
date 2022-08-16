@@ -600,24 +600,26 @@ section {
 }
 
 .section-title {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
-.section-title h2 {
+.section-title1 h2 {
   font-size: 32px;
   font-weight: bold;
-  padding-top: 20px;
+  padding-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
   color: orangered;
+  text-align: center;
+  margin-top: -25px;
 }
 
 
 
 .row__img {
   width: 500px;
-  height: 250px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -638,8 +640,8 @@ section {
 
 
 .img-desc {
-  width: 700px;
-  height: 300px;
+  width: 1050px;
+  height: 550px;
   overflow: hidden;
 }
 

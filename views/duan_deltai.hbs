@@ -46,16 +46,14 @@
 
                     <nav id="navbar" class="navbar order-last order-lg-0">
                         <ul>
-                            <li><a class="nav-link scrollto active" href="#hero">Trang Chủ</a></li>
-                            <li><a class="nav-link scrollto" href="#about">Giới thiệu</a></li>
-                            <li><a class="nav-link scrollto" href="#duan">Dự án</a></li>
-                            <li><a class="nav-link scrollto " href="#tuvan">Tư vấn và tham quan</a></li>
-                            <li><a class="nav-link scrollto " href="#news">Tin tức</a></li>
-                            <li><a class="nav-link scrollto" href="#images">Hình ảnh</a></li>
+                            <li><a class="nav-link scrollto active" href="#hero">GIỚI THIỆU TỔNG QUAN</a></li>
+                            <li><a class="nav-link scrollto" href="#about">VỊ TRÍ</a></li>
+                            <li><a class="nav-link scrollto" href="#duan">TIỆN ÍCH</a></li>
+                            <li><a class="nav-link scrollto " href="#tuvan">MẶT BẰNG</a></li>
+                            <li><a class="nav-link scrollto " href="#news">HÌNH ẢNH</a></li>
+                            <li><a class="nav-link scrollto" href="#images">BẢNG GIÁ</a></li>
 
 
-                            </li>
-                            <li><a class="nav-link scrollto" href="#contact">Tuyển dụng</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
@@ -70,13 +68,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <h1>KIM ANH GROUP</h1>
-                    <h2>Nhà Đất mua bán chất lượng Việt Nam</h2>
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -88,72 +80,52 @@
         <section id="about" class="about">
             <div class="container">
                 <div class="section-title">
-                    <h2>Thông Tin Dự Án </h2>
-                    {{!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                        quidem.
-                        Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                        Quia
-                        fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
+                    <h2 style="color:orangered; font-weight: bold"> THÔNG TIN DỰ ÁN </h2>
+
                 </div>
-                <div class="row">
-                    <div class="row__img">
+                <div class="row__img-desc">
+                    <div class="img-desc">
                         <img src="{{product.image}}" alt="" style="border-radius: 1%" />
-
-                    </div>
-
-                    <div class=" col-lg-5 col-md-5">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <p style="font-size: 30px;font-weight: bold;color: orangered; "> Tên dự án
-                                    :{{product.tenduan}}</p>
-                                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Miểu tả
-                                        dự án</strong> : {{product.mieuta}}</p>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
                 <div class="section-title">
-                    <h2 style="font-size: 17px;">Mô tả chi tiết </h2>
-
+                    <h2 style="font-size: 17px; color: orangered; font-weight: bold; margin-bottom:  10px;">GIỚI THIỆU
+                        TỔNG QUAN</h2>
                 </div>
-
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tên thương mại :
-                    </strong> {{product.tenthuongmai}}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tổng diện tích :
                     </strong> {{product.dientichtb}}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tổng vốn đầu tư :
-                    </strong> {{product.vondautu}}</p>
+                    </strong> {{product.vondautu
+                    }}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Mật độ xây dựng :
+                    </strong> {{product.tiendoxaydung
+                    }}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Quy mô :
                     </strong> {{product.quymo}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Số tầng :
-                    </strong> {{product.sotang}}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tổng số căn hộ :
                     </strong> {{product.tongcanho}}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Diện tích căn hộ :
                     </strong> {{product.dientichcanho}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Vị trí :
-                    </strong> {{product.vitri}}</p>
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Chủ đầu tư :
                     </strong> {{product.chudautu}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Đơn vị phát triển dự án
-                        :
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Phát triển dự án :
                     </strong> {{product.phattrienduan}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tư vấn giám sát :
-                    </strong> {{product.tuvangiamsat}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Nhà thầu :
-                    </strong> {{product.nhathau}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Ngân hàng hổ trợ vốn :
-                    </strong> {{product.hotrovon}}</p>
-                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Tiến độ xây dựng :
-                    </strong> {{product.tiendoxaydung}}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Thi công xây dựng :
+                    </strong> {{product.chudautu
+                    }}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;"> Giám sát thi công :
+                    </strong> {{product.tuvangiamsat
+
+                    }}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">Quản lý & vận hành :
+                    </strong> {{product.quymo}}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;"> Địa điểm quy hoạch :
+                    </strong> {{product.vitri}}</p>
 
                 <div class="section-title">
-                    <h2 style="font-size: 17px;">Hình ảnh vị trí</h2>
-
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold"> vị trí</h2>
                 </div>
+                <hr color="red" align="right" size="2px" style="background-color: orangered; height: 4px;">
                 <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">{{product.tenduan}} :
                     </strong> {{product.thongtinvitri}}</p>
                 <div class="row__img-desc">
@@ -161,34 +133,345 @@
                         <img src="{{product.anhvitri1}}" alt="" style="border-radius: 1%" />
                     </div>
                 </div>
-                <br><br>
-                <p style="color: #000000; font-weight: bold;"> {{product.thongtinvitri1}}</p>
+
+
+                <div class="section-title">
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold"> TIỆN ÍCH</h2>
+                </div>
+                <hr color="red" align="right" size="2px" style="background-color: orangered; height: 4px;">
+                <div class="section-title">
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold; text-align: center;"> GIAO ĐIỂM KẾT
+                        NỐI MỌI HUYẾT MẠCH
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>Sở hữu quỹ đất vàng hiếm hoi ngay trung tâm thành phố Thuận An, giao điểm của mọi kết nối
+                    huyết mạch, xung quanh Legacy
+                    Central là những trục đường trọng điểm của khu vực như Đại lộ Bình Dương (Quốc lộ 13), ĐT 746, ĐT
+                    743B, ĐT 743,… dễ dàng
+                    giao thương với TP. HCM, Đồng Nai, Bình Phước, các tỉnh khu vực Đông Nam Bộ và Tây Nguyên.
+
+                    Trong bán kính chưa đến 1km, cư dân Legacy Prime có thể trải nghiệm hàng loạt tiện ích thương mại,
+                    dịch vụ, tài chính, y
+                    tế, giáo dục,… chất lượng. </p>
                 <div class="row__img-desc">
                     <div class="img-desc">
                         <img src="{{product.anhvitri2}}" alt="" style="border-radius: 1%" />
                     </div>
                 </div>
-                <br><br>
-                <p style="color: #000000; font-weight: bold;"> {{product.thongtinvitri2}}</p>
 
-                <div class="row__img-desc">
-                    <div class="img-desc">
-                        <img src="{{product.anhvitri3}}" alt="" style="border-radius: 1%" />
-                    </div>
+
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        CUỘC SỐNG ĐẲNG CẤP
+                    </h2>
                 </div>
-                <br><br>
-                <p style="color: #000000; font-weight: bold;"> {{product.thongtinvitri3}}</p>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>Sở hữu quỹ đất vàng hiếm hoi ngay trung tâm thành phố Thuận An, giao điểm của mọi kết nối
+                    huyết mạch, xung quanh Legacy
+                    Central là những trục đường trọng điểm của khu vực như Đại lộ Bình Dương (Quốc lộ 13), ĐT 746, ĐT
+                    743B, ĐT 743,… dễ dàng
+                    giao thương với TP. HCM, Đồng Nai, Bình Phước, các tỉnh khu vực Đông Nam Bộ và Tây Nguyên.
 
+                    Trong bán kính chưa đến 1km, cư dân Legacy Prime có thể trải nghiệm hàng loạt tiện ích thương mại,
+                    dịch vụ, tài chính, y
+                    tế, giáo dục,… chất lượng. </p>
                 <div class="row__img-desc">
                     <div class="img-desc">
                         <img src="{{product.anhvitri4}}" alt="" style="border-radius: 1%" />
                     </div>
                 </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        KHÔNG GIAN SỐNG HÒA NHẬP
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Hạnh phúc không chỉ là đích đến, mà là một hành trình… và Legacy Prime chính là nơi khởi đầu của một
+                    hành trình hạnh
+                    phúc. Nơi đây là cả một không gian sống yên bình gắn kết thiên nhiên, hoàn toàn tách biệt với ồn ào
+                    phố thị bên ngoài
+                    ngưỡng cửa.
 
+                    Giúp nuôi dưỡng những giá trị nhân văn trong tâm hồn, mở ra một cuộc sống thăng hoa và đầy hứng
+                    khởi. </p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/19nxxtAa-8BR2o8g1DMhH2sOvPJGlnkmd=w624-h468-p-k-nu-iv1"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        Mang tiện ích vào tổ ấm
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Hơn 2.000 m² tại Legacy Prime được dành để phát triển mảng xanh và cảnh quan. Toàn bộ không gian
+                    giữa các toà tháp được
+                    đan xen và bao phủ bởi sắc xanh từ công viên dọc theo các tuyến đi bộ, giúp cư dân hoàn toàn tách
+                    biệt khỏi thành phố ồn
+                    ào đầy khói bụi. </p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1Y6sfk0RWCvhgu9bM1XhxRQj7cFEbIsPJ=w624-h468-p-k-nu-iv1"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        ĐẮM MÌNH VÀO LÀN NƯỚC XANH MÁT CỦA HỒ BƠI TRÀN BỜ HIỆN ĐẠI
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Hồ bơi tràn bờ hiện đại là nơi thư giãn tuyệt vời sau một ngày bộn bề công việc. Làn nước xanh mát,
+                    không khí trong lành
+                    sẽ đánh tan mọi muộn phiền, mệt mỏi.</p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1bLSsyJGQT1s5tco1n5kQsj0IdlhcZL0m=w624-h468-p-k-nu-iv1"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        ĐA DẠNG HOẠT ĐỘNG TĂNG CƯỜNG THỂ CHẤT VÀ PHÁT TRIỂN TRÍ TUỆ
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Tại Legacy Prime cư dân có thể bắt đầu một ngày mới tràn đầy năng lượng với các hoạt động tăng cường
+                    thể chất thú vị tại
+                    khu thể dục thể thao, gym, công viên dưỡng sinh,…</p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/167xWBzatv7eprlqfRr5eKznEsnJMbfJr=w624-h468-p-k-nu-iv1"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Nhà trẻ, hồ bơi, khu vui chơi dành riêng cho trẻ em đều được tích hợp đầy đủ tại Legacy Prime. Tất
+                    cả nhằm hướng đến sự
+                    phát triển toàn diện về trí tuệ và thể chất của những cư dân nhí.</p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617294807736-ad554754e0ab45abc80ccf7f2201d9b3-1.jpg"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+
+
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        QUẢN LÝ THÔNG MINH AN TOÀN CUỘC SỐNG
+                    </h2>
+                </div>
+                <p style="color: #000000; font-weight: bold;"><strong style="color: orangered;">
+                    </strong>
+                    Legacy Prime ứng dụng công nghệ quản lý căn hộ thông minh, đem đến cho cư dân trải nghiệm sống hiện
+                    đại và an toàn. Hệ
+                    thống an ninh kỹ thuật được bảo trì, bảo dưỡng thường xuyên, đảm bảo tiêu chuẩn chất lượng cao, bền
+                    vững.</p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617295397125-679964fa02b9560e120b875cd30b9ac0.jpg"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold; margin-top: 20px;">
+                        MẶT BẰNG
+                    </h2>
+                </div>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617295554363-f4eef97d9f8951fb1372e3bcfa9313e9.jpg"
+                            alt="" style="border-radius: 1%" />
+                    </div>
+                </div>
+                <br>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/picture1.jpg" alt=""
+                            style="border-radius: 1%" />
+                    </div>
+                </div>
+                <br>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/mat-bang-tang-5-19.jpg" alt=""
+                            style="border-radius: 1%" />
+                    </div>
+                </div>
+                <br>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/mat-bang-tang-20-24.jpg" alt=""
+                            style="border-radius: 1%" />
+                    </div>
+                </div>
+                <br>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/mat-bang-tang-25-29.jpg" alt=""
+                            style="border-radius: 1%" />
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold"> TIỆN ÍCH</h2>
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        PHỐI CẢNH DỰ ÁN
+                    </h2>
+                </div>
+                <div style="align-items: center;">
+                    <p><iframe src="https://view360.flyingcam-vietnam.com/Project2021/LegacyCentral-final/" width="100%"
+                            style="justify-content: center;" height="400"></iframe></p>
+                </div>
+                <p><iframe src="https://legacycentral.vn/vtour/tour.html" width="100%" height="600"></iframe></p>
+                <div class="img-desc">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1WB16FqEQB2qyXRMs_VdDjoaOAi1iyhQh=w624-h468-p-k-nu-iv1"
+                        alt="" style="border-radius: 1%" />
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1ztjr-69Rv2qMDdhpg7jBSjl-90OEx0NH=w624-h468-p-k-nu-iv1"
+                        alt="" style="border-radius: 1%" />
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617294580350-058918aea4cfd2588fbc05f07d146022.jpg"
+                        alt="" style="border-radius: 1%" />
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617294789900-7c69c7bdeef51a7e1d13f0181d31f481.jpg"
+                        alt="" style="border-radius: 1%" />
+                </div>
+
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        PHỐI CẢNH CĂN HỘ STUDIO LEGACY PRIME
+                    </h2>
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/can-ho-studio.jpg" alt=""
+                        style="border-radius: 1%" />
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        PHỐI CẢNH CĂN 1 PHÒNG NGỦ LEGACY PRIME
+
+                    </h2>
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/can-ho-1-phong-ngu-42m2.jpg" alt=""
+                        style="border-radius: 1%" />
+
+                </div>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/can-ho-1-phong-ngu-45-8m2.jpg" alt=""
+                        style="border-radius: 1%" />
+
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        PHỐI CẢNH CĂN 2 PHÒNG NGỦ LEGACY PRIME
+
+                    </h2>
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/can-ho-2-phong-ngu.jpg" alt=""
+                        style="border-radius: 1%" />
+
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3541405677063-974129d9542335ee29c3fbf6304cb943.jpg"
+                        alt="" style="border-radius: 1%" />
+
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/295493578-1248166816013162-8251639050849569597-n.jpg"
+                        alt="" style="border-radius: 1%" />
+
+                </div>
+                <br>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/295439697-1248166736013170-624834388531797306-n.jpg"
+                        alt="" style="border-radius: 1%" />
+
+                </div>
+
+                <div class="section-title">
+                    <h2 style="font-size: 25px; color: orangered; font-weight: bold; margin-top: 20px;">
+                        BÁO GIÁ & PTTT
+                    </h2>
+                    <hr>
+                </div>
+                <div class="section-title">
+                    <h2
+                        style="font-size: 25px; color: orangered; font-weight: bold; text-align: center; margin-top: 20px;">
+                        THỎA GIẤC MƠ AN CƯ CHỈ TỪ 166 TRIỆU/CĂN
+                        LIÊN HỆ QUẢN LÝ SẢN PHẤM : 0906 333 076
+
+                    </h2>
+                </div>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617294580354-f3da5c6910b1aaa3db5103d8d9692319.jpg"
+                        alt="" style="border-radius: 1%" />
+
+                </div>
+                <p>Cơ hội sở hữu quà tặng hấp dẫn với tổng giá trị đến 7 tỷ đồng:
+
+                </p>
+                <p>2 xe Toyota Camry 2.5Q
+
+
+                </p>
+                <p>6 xe Honda SH 125i ABS
+
+
+                </p>
+                <p>10 xe Honda Air Blade 2020
+
+
+                </p>
+                <p>
+                    Cùng 2.000 quà tặng giá trị khác
+                </p>
+                <div class="img-desc">
+                    <img src="https://kimoanhgroups.org/wp-content/uploads/2020/09/z3617295675657-7647c4f78768e2af0b761a9137eb06e8.jpg"
+                        alt="" style="border-radius: 1%" />
+
+                </div>
 
             </div>
-
-        </section><!-- End About Us Section -->
+        </section>
+        <!-- End About Us Section -->
         <section id="projects" class="projects">
             <div class="container" data-aos="fade-up">
 
@@ -499,7 +782,8 @@
                             <input type="phone" name="phone" class="form-control" placeholder="Số Điện Thoại"
                                 style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
                             <div class="col-lg-3 cta-btn-container text-center">
-                                <button type="submit" class="cta-btn align-middle" style="margin-top: 20px;">Gửi thông
+                                <button type="submit" class="cta-btn align-middle" style="margin-top: 20px;">Gửi
+                                    thông
                                     tin</button>
                             </div>
 

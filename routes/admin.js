@@ -12,14 +12,14 @@ const khachangController = require("../compoments/khachhang/controller");
 const authentication = require("../ui/authentication")
 const upload = require("../middle/upload");
 
-router.get("/", [authentication.checklogin], async function (req, res, next) {
+router.get("/", async function (req, res, next) {
     res.render("admin");
 
 });
 
 
 //dự án
-router.get("/table/du-an", [authentication.checklogin], async function (req, res, next) {
+router.get("/table/du-an", async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const products = await productController.getAll();
 
@@ -32,7 +32,7 @@ router.get("/table/du-an", [authentication.checklogin], async function (req, res
     // }
 
 });
-router.get("/table/du-an/insert", [authentication.checklogin], async function (req, res, next) {
+router.get("/table/du-an/insert", async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     res.render("admin_insert_du-an");
 
@@ -43,7 +43,7 @@ router.post("/insert_du-an", [upload.single('image')], async function (req, res,
     let { body, file } = req;
     let image = '';
     if (file) {
-        image = `https://batdongsankimanh.herokuapp.com/images/${file.filename}`
+        image = `http://192.168.1.6:3000/images/${file.filename}`
     }
     body = { ...body, image }
 
@@ -72,7 +72,7 @@ router.post('/:id/edit', [upload.single('image')], async function (req, res, nex
     console.log('file: ' + JSON.stringify(file))
     delete body.image;
     if (file) {
-        let image = `https://batdongsankimanh.herokuapp.com/images/${file.filename}`
+        let image = `http://192.168.1.6:3000/images/${file.filename}`
         body = { ...body, image }
     }
 
@@ -80,7 +80,7 @@ router.post('/:id/edit', [upload.single('image')], async function (req, res, nex
     await productController.update(params.id, body);
     res.redirect('/admin/table/du-an')
 });
-router.get("/table/duan/:id/edit", [authentication.checklogin], async function (req, res, next) {
+router.get("/table/duan/:id/edit", async function (req, res, next) {
     // lấy 1 sản phẩm từ database và hiển thị
     const { id } = req.params;
 
@@ -94,7 +94,7 @@ router.get("/table/duan/:id/edit", [authentication.checklogin], async function (
 
 // khách hàng
 
-router.get("/table/khach-hang", [authentication.checklogin], async function (req, res, next) {
+router.get("/table/khach-hang", async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const data = await khachangController.getAllkhach();
 
@@ -108,7 +108,7 @@ router.get("/table/khach-hang", [authentication.checklogin], async function (req
 
 });
 // bản tin 
-router.get("/table/news", [authentication.checklogin], async function (req, res, next) {
+router.get("/table/news", async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const data = await newController.getAll();
 

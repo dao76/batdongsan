@@ -58,20 +58,16 @@
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/admin/table/news">Bản
-                                tin</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/news">Bản tin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/admin/table/du-an">Dự
-                                án</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/du-an">Dự án</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/table/khach-hang">Khách
-                                hàng</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/khach-hang">Khách hàng</a>
                         </li>
                     </ul>
                 </div>
-
 
 
                 <li class="nav-item sidebar-actions">
@@ -268,7 +264,7 @@
                                                 <td>
 
                                                     <a
-                                                        href="https://batdongsankimanh.herokuapp.com/table/new/{{this._id}}/edit">edit</a>
+                                                        href="http://localhost:3000/admin/table/new/{{this._id}}/edit">edit</a>
                                                     <button onclick="onClickDelete('{{this._id}}')" data-toggle="modal"
                                                         data-target="#confirmModal" class="btn btn-link">Delete</button>
                                                 </td>
@@ -310,7 +306,7 @@
                     <script>
                         const edit = (id) => {
                             // http://localhost:3000/san-pham/:id/edit
-                            window.location.href = `https://batdongsankimanh.herokuapp.com/admin/table/news/${id}/edit`
+                            window.location.href = `http://localhost:3000/admin/table/news/${id}/edit`
                         }
                         let deleted_id;
                         const onClickDelete = (id) => {
@@ -321,7 +317,7 @@
                             return res.json();
                         }
                         const onDelete = async () => {
-                            let url = `https://batdongsankimanh.herokuapp.com/admin/table/news/${deleted_id}/delete`;
+                            let url = `http://localhost:3000/admin/table/news/${deleted_id}/delete`;
                             const option = {
                                 method: 'delete',
                                 headers: { 'Content-Type': 'application/json' }

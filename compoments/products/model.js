@@ -7,6 +7,7 @@ const productSchema = new Schema({
     tenduan: { type: String },  // tên dự án
     mieuta: { type: String },   // miêu tả dư án
     image: { type: String },   // hình ảnh nổi bật dự án
+    gia: { type: String },
     tenthuongmai: { type: String },   // tên đầy đủ dự án
     thongtinvitri: { type: String },
     thongtinvitri1: { type: String },

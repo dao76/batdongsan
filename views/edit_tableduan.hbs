@@ -58,20 +58,16 @@
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/admin/table/news">Bản
-                                tin</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/news">Bản tin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/admin/table/du-an">Dự
-                                án</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/du-an">Dự án</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsankimanh.herokuapp.com/table/khach-hang">Khách
-                                hàng</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/khach-hang">Khách hàng</a>
                         </li>
                     </ul>
                 </div>
-
 
                 <li class="nav-item sidebar-actions">
                     <div class="nav-link">
@@ -256,7 +252,7 @@
                                 </div><!-- End Page Title -->
                                 <h1>sửa dự án</h1>
                                 <form role="form " method="post"
-                                    action="https://batdongsankimanh.herokuapp.com/admin/{{product._id}}/edit"
+                                    action="http://localhost:3000/admin/{{product._id}}/edit"
                                     enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label> Tên dự án</label>
@@ -278,7 +274,11 @@
                                         <img width="300" height="300" src="{{product.image}}" />
                                         <img id="image-view" style="display: none; object-fit: cover;" width="300"
                                             height="300" src="" </div>
-
+                                        <div class="form-group" style="margin-top: 10;">
+                                            <label>giá</label>
+                                            <input class="form-control" value="{{product.gia}}" name="gia"
+                                                type="text" />
+                                        </div>
                                         <div class="form-group" style="margin-top: 10;">
                                             <label>Tên Thương mại</label>
                                             <input class="form-control" value="{{product.tenthuongmai}}"
