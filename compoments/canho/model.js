@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const productSchema = new Schema({
+const canhoSchema = new Schema({
     id: { type: ObjectId },
     tenduan: { type: String },  // tên dự án
     mieuta: { type: String },   // miêu tả dư án
@@ -81,4 +81,4 @@ const productSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('product', productSchema);
+module.exports = mongoose.model('canho', canhoSchema);

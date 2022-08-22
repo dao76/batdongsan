@@ -1,0 +1,258 @@
+<!-- ======= Header ======= -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>KIM OANH GROUP</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="/assets/img/kimanh/logo.jpg" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
+
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <img src="https://canholegacycentral.vn/themes/1/logo.jpg" height="85"
+                        style="width: 90px;border-radius: 50%; margin-right: 100px;">
+
+
+                    <nav id="navbar" class="navbar order-last order-lg-0">
+                        <ul>
+                            <li><a class="nav-link scrollto active" href="#about">GIỚI THIỆU TỔNG QUAN</a></li>
+                            <li><a class="nav-link scrollto" href="#vitri">VỊ TRÍ</a></li>
+                            <li><a class="nav-link scrollto" href="#tienich">TIỆN ÍCH</a></li>
+                            <li><a class="nav-link scrollto " href="#matbang">MẶT BẰNG</a></li>
+                            <li><a class="nav-link scrollto " href="#image">HÌNH ẢNH</a></li>
+                            <li><a class="nav-link scrollto" href="#gia">BẢNG GIÁ</a></li>
+
+
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav><!-- .navbar -->
+
+                    <a href="#contact" class="get-started-btn scrollto" style="background-color: orangered;">Liên Hệ</a>
+                </div>
+            </div>
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-center">
+        <div class="container">
+
+        </div>
+    </section>
+
+    <main id="main">
+
+        <!-- ======= About Us Section ======= -->
+
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title1">
+                    <h2 style="color: blue; font-size: 25px;">{{videos.tieude}}</h2>
+                    </h2>
+
+                </div>
+                <div style="align-items: center;">
+                    <iframe width="660" height="415" style="justify-content: center; text-align: center;"
+                        src="{{videos.linkvideo}}" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title1">
+                    <h2>VIDEO LIÊN QUAN</h2>
+                    <h2><img src="/assets/img/kimanh/titlebg.png" alt="">
+                    </h2>
+
+                </div>
+
+
+                <div class="slides-2 swiper">
+                    <div class="swiper-wrapper">
+                        {{#each data}}
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+
+                                    <div class="icon-box">
+                                        <a href="https://batdongsankimoanh.herokuapp.com/video/{{this._id}}/detail"><img
+                                                class="card-img-top" src="{{this.image}}" height="250px" <h4
+                                                style="margin-top: 5px;"><a style="color: #FF9900; font-weight: bold;"
+                                                href="">{{this.tieude}}</a>
+                                            </h4></a>
+
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+                        {{/each}}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+        <section id="tuvan" class="cta">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3 style="margin-bottom: 50px;">Đăng ký tham quan và tư vấn</h3>
+                        <form class="form-group" action="https://batdongsankimoanh.herokuapp.com/sendmail" method="POST"
+                            id="myform">
+                            <input type="email" name="email" class="form-control" placeholder="Email của bạn"
+                                style="margin-bottom: 20px; height: 60px;border-radius: 3%;">
+                            <input type="name" name="name" class="form-control" placeholder="Họ Và Tên"
+                                style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
+                            <input type="phone" name="phone" class="form-control" placeholder="Số Điện Thoại"
+                                style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
+                            <div class="col-lg-3 cta-btn-container text-center">
+                                <button type="submit" class="cta-btn align-middle" style="margin-top: 20px;">Gửi
+                                    thông
+                                    tin</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Cta Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                {{!-- <h3>KnightOne</h3>
+                <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi
+                    placeat.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div> --}}
+                <div class="col-md-6 hide-xs">
+                    <div class="footer-contact mt-10">
+                        <div class="clearfix footer_brand" style="margin-top: -80px;">
+                            <img src="https://canholegacycentral.vn/themes/1/logo.jpg"
+                                style="width: 150px;border-radius: 50%; margin-top: 80px;" />
+                            <div class="text" style="line-height: 30px;margin-top: 10px;">
+                                <span>CHỦ ĐẦU TƯ</span><br />
+                                CĂN HỘ HÀNG ĐẦU VIỆT NAM
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-contact mt-10">
+                        <div class="footer_info">
+                            <p class=" contact-title">Thông tin liên hệ</p>
+                            <p style="margin-top: -30px;">Hotline: <b><a href="tel:0906333076" class="color"
+                                        style="font-size:17px;">0906 333
+                                        076</a></b></p>
+                            <p style="margin-top: -30px;"><b>Kim Anh Group(CN Cộng Hòa)</b></p>
+                            <p style="margin-top: -30px;"> Địa chỉ: 610 Đường Cộng Hòa, Phường 13,
+                                Tân
+                                Bình, Thành phố Hồ Chí Minh, Việt Nam</p>
+                            <p style="font-size:16px;line-height:1.7;margin-top: -30px;">Email:
+                                Tranquangniem4696@gmail.com
+                            </p>
+
+                        </div>
+
+                    </div> <!-- footer contact -->
+                </div>
+
+                <div class="mb-4">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-pinterest"></i> </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; Copyright <strong><span style="color: orangered;">Batdongsankimanh.com.vn</span></strong>.
+                    All
+                    Rights
+                    Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/knight-simple-one-page-bootstrap-template/ -->
+                    Designed by <a href="https://facebook.com/tranquangdao.info/">Trần Quang Đạo</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-address">
+
+
+    </footer><!-- End Footer -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

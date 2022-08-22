@@ -8,6 +8,8 @@ const userController = require("../compoments/user/controller");
 const productController = require("../compoments/products/controller");
 const newControler = require("../compoments/news/controller");
 const khachControler = require("../compoments/khachhang/controller");
+const videoController = require("../compoments/video/controller");
+const canhoController = require("../compoments/canho/controller");
 
 const authentication = require("../ui/authentication")
 const upload = require("../middle/upload");
@@ -49,14 +51,11 @@ router.get("/", async function (req, res, next) {
   // lấy danh sách sản phẩm từ database và hiển thị
   const data = await productController.getProducts();
   const newdata = await newControler.getnews();
+  const videodata = await videoController.getVideos();
+  const canhodata = await canhoController.getProducts();
 
-  res.render("index", { products: data, news: newdata });
-  // hiển thị(render)
-  // if (data != null) {
-  //   res.status(200).json({ status: 200, error: false, data: data })
-  // } else {
-  //   res.status(200).json({ status: 200, error: false, data: [] })
-  // }
+  res.render("index", { products: data, news: newdata, video: videodata, canho: canhodata });
+
 
 });
 router.get("/all_duan", async function (req, res, next) {
@@ -64,17 +63,21 @@ router.get("/all_duan", async function (req, res, next) {
   const data = await productController.getAll();
 
   res.render("duan_all", { products: data });
-  // hiển thị(render)
-  // if (data != null) {
-  //   res.status(200).json({ status: 200, error: false, data: data })
-  // } else {
-  //   res.status(200).json({ status: 200, error: false, data: [] })
-  // }
+
+
+});
+router.get("/all_video", async function (req, res, next) {
+  // lấy danh sách sản phẩm từ database và hiển thị
+  const data = await videoController.getAll();
+
+  res.render("video_all", { products: data });
+
 
 });
 router.post('/insert', async (req, res, next) => {
-  const { tenduan } = req.body
-  const result = await productController.insert({ tenduan })
+  const { body } = req
+  console.log(body);
+  const result = await videoController.insert(body)
   if (result) {
     return res.status(200).json({ status: 200, error: false })
   }

@@ -66,12 +66,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost:3000/admin/table/khach-hang">Khách hàng</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/admin/table/video">Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/admin/table/can-ho">Căn hộ</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -239,54 +233,102 @@
                         <h3 class="mb-0"> Hi, Quang Niệm
                         </h3>
                         <div class="d-flex">
-                            <button type="button" class="btn btn-sm ml-3 btn-success"> Add User </button>
+                            <button type="button" class="btn btn-sm ml-3 btn-success"> <a
+                                    href="http://localhost:3000/admin/table/video/insert" style="color: white;">Thêm
+                                    video mới</a>
+                            </button>
                         </div>
                     </div>
-                    <div class="colum">
-                        <div class="col-xl-3 col-lg-12 stretch-card ">
-                            <div class="colum-children">
-                                <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
-                                    <div class="card bg-warning">
-                                        <div class="card-body px-3 py-4">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div class="color-card">
-                                                    <p class="mb-2 color-card-head">Lượt Vào trang</p>
-                                                    <h2 class="text-white"> $8,753.<span class="h5">00</span>
-                                                    </h2>
-                                                </div>
-                                                <i
-                                                    class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                    <div class="col-lg-12 stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Danh sách Video</h4>
+
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tiêu đề video</th>
+                                                <th>Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each products}}
+                                            <tr class="table-info">
+                                                <td>{{this.index}}</td>
+                                                <td>{{this.tieude}}</td>
+
+                                                <td>
+                                                    <a
+                                                        href="http://localhost:3000/admin/table/video/{{this._id}}/edit">edit</a>
+                                                    <button onclick="onClickDelete('{{this._id}}')" data-toggle="modal"
+                                                        data-target="#confirmModal" class="btn btn-link">Delete</button>
+                                                </td>
+
+                                            </tr>
+                                            {{/each }}
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
-                                    <div class="card bg-warning">
-                                        <div class="card-body px-3 py-4">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div class="color-card">
-                                                    <p class="mb-2 color-card-head">Lượt Vào trang</p>
-
-                                                    <h2 class="text-white"> $8,753.<span class="h5">00</span>
-                                                    </h2>
-                                                </div>
-                                                <i
-                                                    class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
-
                     </div>
+                    <!--  Modals-->
+                    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="panel-body">
+                                        <h3>Are you sure?</h3>
+                                        <div class="form-group modal-footer">
+                                            <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Cancel</button>
+                                            <button type="button" onclick="onDelete()"
+                                                class="btn btn-primary">Yes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modals-->
 
-
+                    <script>
+                        const edit = (id) => {
+                            // http://localhost:3000/san-pham/:id/edit
+                            window.location.href = `http://localhost:3000/admin/table/video/${id}/edit`
+                        }
+                        let deleted_id;
+                        const onClickDelete = (id) => {
+                            deleted_id = id;
+                        }
+                        const fetchAPI = async (url, option) => {
+                            const res = await fetch(url, option);
+                            return res.json();
+                        }
+                        const onDelete = async () => {
+                            let url = `http://localhost:3000/admin/video/${deleted_id}/delete`;
+                            const option = {
+                                method: 'delete',
+                                headers: { 'Content-Type': 'application/json' }
+                            }
+                            try {
+                                await fetchAPI(url, option);
+                                window.location.href = 'http://localhost:3000/admin/table/video';
+                            } catch (e) { console.log('Delete error: ', e) }
+                        }
+                    </script>
 
                 </div>
-                <br><br><br><br>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
@@ -299,6 +341,7 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/assets1/vendors/js/vendor.bundle.base.js"></script>

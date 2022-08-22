@@ -13,6 +13,7 @@ require('./compoments/products/model');
 var indexRouter = require('./routes/index');
 var duanRouter = require('./routes/duan')
 var adminRouter = require('./routes/admin')
+var videoRouter = require('./routes/video')
 
 
 var app = express();
@@ -38,7 +39,7 @@ app.use('/', indexRouter);
 app.use('/du-an', duanRouter);
 app.use('/admin', adminRouter);
 
-
+app.use('/video', videoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

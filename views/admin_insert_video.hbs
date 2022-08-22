@@ -66,15 +66,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost:3000/admin/table/khach-hang">Khách hàng</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/admin/table/video">Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost:3000/admin/table/can-ho">Căn hộ</a>
-                        </li>
                     </ul>
                 </div>
-
 
                 <li class="nav-item sidebar-actions">
                     <div class="nav-link">
@@ -239,88 +232,112 @@
                         <h3 class="mb-0"> Hi, Quang Niệm
                         </h3>
                         <div class="d-flex">
-                            <button type="button" class="btn btn-sm ml-3 btn-success"> Add User </button>
+                            <button type="button" class="btn btn-sm ml-3 btn-success"> Thêm tin tức mới </button>
                         </div>
                     </div>
-                    <div class="colum">
-                        <div class="col-xl-3 col-lg-12 stretch-card ">
-                            <div class="colum-children">
-                                <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
-                                    <div class="card bg-warning">
-                                        <div class="card-body px-3 py-4">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div class="color-card">
-                                                    <p class="mb-2 color-card-head">Lượt Vào trang</p>
-                                                    <h2 class="text-white"> $8,753.<span class="h5">00</span>
-                                                    </h2>
-                                                </div>
-                                                <i
-                                                    class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
-                                    <div class="card bg-warning">
-                                        <div class="card-body px-3 py-4">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div class="color-card">
-                                                    <p class="mb-2 color-card-head">Lượt Vào trang</p>
 
-                                                    <h2 class="text-white"> $8,753.<span class="h5">00</span>
-                                                    </h2>
-                                                </div>
-                                                <i
-                                                    class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-12 stretch-card">
+                        <div class="card">
+                            <div class="card-body">
 
+                                </p>
+                                <div class="pagetitle">
+                                    <h1> Thêm video</h1>
+                                    <nav>
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                            <li class="breadcrumb-item">bảng</li>
+                                            <li class="breadcrumb-item active">video </li>
+                                            <li class="breadcrumb-item active">thêm dữ liệu</li>
+                                        </ol>
+                                    </nav>
+                                </div><!-- End Page Title -->
+
+                                <form role="form" method="post" action="http://localhost:3000/admin/insert_video">
+
+
+                                    <div class="form-group">
+                                        <label for="">ảnh minh họa </label>
+                                        <input class="form-control" id="image" name="image" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tiêu đề video</label>
+                                        <input class="form-control" id="tieude" name="tieude" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>link video</label>
+                                        <input class="form-control" id="linkvideo" name="linkvideo" type="text" />
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="text-center">
+                                            <button type="submit" name="submit" onchange="ktra()" id="submit"
+                                                class="btn btn-primary">Lưu</button>
+                                        </div>
+                                </form>
+                            </div>
+
+                            <script>
+                                const ktra = () => {
+                                    const name = document.getElementById('name').value;
+                                    const submit = document.getElementById('submit').value;
+
+                                    if (!name || name.trim().length == 0) {
+                                        submit.disabled = true;
+                                    } else {
+                                        submit.disabled = false;
+                                    }
+                                }
+                                const onChangeFile = () => {
+                                    const file = document.getElementById('image-file').files[0];
+                                    const reader = new FileReader();
+                                    reader.onload = e => {
+                                        document.getElementById('image-view').src = e.target.result;
+                                        document.getElementById('image-view').style.display = 'block';
+                                    }
+                                    reader.readAsDataURL(file);
+                                }
+                            </script>
+
+                        </div>
+                        <footer class="footer">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright
+                                    ©
+                                    Datnenkimoanh.com.vn 2022</span>
 
                             </div>
-                        </div>
-
+                        </footer>
                     </div>
-
-
-
+                    <!-- main-panel ends -->
                 </div>
-                <br><br><br><br>
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
-                            Datnenkimoanh.com.vn 2022</span>
-
-                    </div>
-                </footer>
+                <!-- page-body-wrapper ends -->
             </div>
-            <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="/assets1/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="/assets1/vendors/chart.js/Chart.min.js"></script>
-    <script src="/assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.resize.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.categories.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.fillbetween.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.stack.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.pie.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="/assets1/js/off-canvas.js"></script>
-    <script src="/assets1/js/hoverable-collapse.js"></script>
-    <script src="/assets1/js/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="/assets1/js/dashboard.js"></script>
-    <!-- End custom js for this page -->
+
+            <!-- container-scroller -->
+            <!-- plugins:js -->
+            <script src="/assets1/vendors/js/vendor.bundle.base.js"></script>
+            <!-- endinject -->
+            <!-- Plugin js for this page -->
+            <script src="/assets1/vendors/chart.js/Chart.min.js"></script>
+            <script src="/assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.resize.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.categories.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.fillbetween.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.stack.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.pie.js"></script>
+            <!-- End plugin js for this page -->
+            <!-- inject:js -->
+            <script src="/assets1/js/off-canvas.js"></script>
+            <script src="/assets1/js/hoverable-collapse.js"></script>
+            <script src="/assets1/js/misc.js"></script>
+            <!-- endinject -->
+            <!-- Custom js for this page -->
+            <script src="/assets1/js/dashboard.js"></script>
+            <!-- End custom js for this page -->
 </body>
 
 </html>
