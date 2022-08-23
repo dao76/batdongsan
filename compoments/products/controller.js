@@ -193,7 +193,7 @@ const getProductById = async (id) => {
       tongvondautu: product.tongvondautu,
       matdoxaydung: product.matdoxaydung,
       quymo: product.quymo,
-      tongsocanho: product._id,
+      tongsocanho: product.tongsocanho,
       dientichcanho: product.dientichcanho,
       chudautu: product.chudautu,
       phattrienduan: product.phattrienduan,

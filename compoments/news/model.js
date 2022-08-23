@@ -6,6 +6,8 @@ const newsSchema = new Schema({
     id: { type: ObjectId },
     tennew: { type: String },
     mieuta: { type: String },
+    mieuta1: { type: String },
+    mieuta1: { type: String },
     image: { type: String },
 
 });

@@ -1,33 +1,27 @@
 
-
 const newmodel = require('./model');
-exports.getnews = async () => {
+const getnew = async () => {
     // return data;
-    return newmodel.find({}, 'id tennew mieuta image').limit(6).sort({ _id: -1 })
+    return newmodel.find({}, 'id tennew mieuta mieuta1 mieuta2 image').limit(6).sort({ _id: -1 })
 };
-exports.getAllNews = async () => {
+const getAllNews = async () => {
     // return data;
-    return newmodel.find({}, 'id tennew mieuta image').sort({ _id: -1 })
+    return newmodel.find({}, 'id tennew mieuta mieuta1 mieuta2 image').sort({ _id: -1 })
 };
-exports.getNewById = async (id) => {
+const getnewById = async (id) => {
     const news = await newmodel.findOne({ '_id': id })
     return news
 }
-exports.insert = async (news) => {
+
+const insert = async (news) => {
     const p = new newmodel(news);
     await p.save();
 
 }
-exports.update = async (id, news) => {
 
-    await newmodel.findOneAndUpdate(id, news);
+const deletee = async (id) => {
+    await newmodel.findByIdAndDelete(id);
 }
 
-
-exports.delete = async (id) => {
-    await productmodel.findByIdAndDelete(id);
-
-}
-
-
+module.exports = { getnew, deletee, insert, getAllNews, getnewById }
 

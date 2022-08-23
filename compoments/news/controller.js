@@ -2,14 +2,16 @@ const newService = require('../news/service');
 
 
 
-exports.getnews = async () => {
+const getNews = async () => {
     try {
-        let news = await newService.getnews();
+        let news = await newService.getnew();
         news = news.map((item, index) => {
             item = {
                 _id: item._id,
                 tennew: item.tennew,
                 mieuta: item.mieuta,
+                mieuta1: item.mieuta1,
+                mieuta2: item.mieuta2,
                 image: item.image,
                 index: index + 1
             }
@@ -21,7 +23,7 @@ exports.getnews = async () => {
         return []
     }
 }
-exports.getAll = async () => {
+const getAllnew = async () => {
     try {
         let news = await newService.getAllNews();
         news = news.map((item, index) => {
@@ -29,8 +31,9 @@ exports.getAll = async () => {
                 _id: item._id,
                 tennew: item.tennew,
                 mieuta: item.mieuta,
+                mieuta1: item.mieuta1,
+                mieuta2: item.mieuta2,
                 image: item.image,
-
                 index: index + 1
             }
             return item;
@@ -41,26 +44,36 @@ exports.getAll = async () => {
         return []
     }
 }
+const getNewsByid = async (id) => {
+    try {
+        let news = await newService.getnewById(id);
+        news = {
+            _id: news._id,
+            tennew: news.tennew,
+            mieuta: news.mieuta,
+            mieuta1: news.mieuta1,
+            mieuta2: news.mieuta2,
+            image: news.image,
+        }
+        return news;
+    } catch (error) {
+        return {};
+    }
+
+}
 
 
-
-exports.insert = async (news) => {
+const insert = async (news) => {
     await newService.insert(news);
 
 }
-exports.update = async (id, news) => {
+
+const deleteeee = async (id) => {
     try {
-        await newService.update(id, news);
+        await newService.deletee(id);
 
     } catch (error) {
 
     }
 }
-exports.delete = async (id) => {
-    try {
-        await newService.delete(id);
-
-    } catch (error) {
-
-    }
-}
+module.exports = { getNews, deleteeee, insert, getNewsByid, getAllnew }

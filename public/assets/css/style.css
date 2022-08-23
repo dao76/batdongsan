@@ -2128,3 +2128,13 @@ section {
     width: 100%;
   }
 }
+
+@media only screen and (min-width: 370px) {
+
+  .row__img-desc,
+  .img-desc,
+  .img {
+    height: 50%;
+    width: 100%;
+  }
+}

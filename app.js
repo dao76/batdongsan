@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 var duanRouter = require('./routes/duan')
 var adminRouter = require('./routes/admin')
 var videoRouter = require('./routes/video')
+var newsRouter = require('./routes/news')
 
 
 var app = express();
@@ -38,6 +39,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/du-an', duanRouter);
 app.use('/admin', adminRouter);
+app.use('/news', newsRouter);
 
 app.use('/video', videoRouter);
 

@@ -14,14 +14,14 @@ const canhoController = require("../compoments/canho/controller");
 const authentication = require("../ui/authentication")
 const upload = require("../middle/upload");
 
-router.get("/", async function (req, res, next) {
+router.get("/", [authentication.checklogin], async function (req, res, next) {
     res.render("admin");
 
 });
 
 
 //dự án
-router.get("/table/du-an", async function (req, res, next) {
+router.get("/table/du-an", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const products = await productController.getAll();
 
@@ -29,13 +29,13 @@ router.get("/table/du-an", async function (req, res, next) {
 
 
 });
-router.get("/table/du-an/insert", async function (req, res, next) {
+router.get("/table/du-an/insert", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     res.render("admin_insert_du-an");
 
 
 });
-router.post("/insert_du-an", [upload.single('image')], async function (req, res, next) {
+router.post("/insert_du-an", [authentication.checklogin], [upload.single('image')], async function (req, res, next) {
     // thêm mới sp vào db
     let { body, file } = req;
     let image = '';
@@ -51,7 +51,7 @@ router.post("/insert_du-an", [upload.single('image')], async function (req, res,
     res.redirect("/admin/table/du-an");
     //chuyển lại trang sản phẩm 
 });
-router.delete("/:id/delete", async function (req, res, next) {
+router.delete("/:id/delete", [authentication.checklogin], async function (req, res, next) {
     // xóa 1 sản phẩm
     const { id } = req.params;
     await productController.deleteeee(id);
@@ -77,7 +77,7 @@ router.post('/:id/edit', [upload.single('image')], async function (req, res, nex
     await productController.update(params.id, body);
     res.redirect('/admin/table/du-an')
 });
-router.get("/table/duan/:id/edit", async function (req, res, next) {
+router.get("/table/duan/:id/edit", [authentication.checklogin], async function (req, res, next) {
     // lấy 1 sản phẩm từ database và hiển thị
     const { id } = req.params;
 
@@ -91,7 +91,7 @@ router.get("/table/duan/:id/edit", async function (req, res, next) {
 
 // khách hàng
 
-router.get("/table/khach-hang", async function (req, res, next) {
+router.get("/table/khach-hang", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const data = await khachangController.getAllkhach();
 
@@ -105,9 +105,9 @@ router.get("/table/khach-hang", async function (req, res, next) {
 
 });
 // bản tin 
-router.get("/table/news", async function (req, res, next) {
+router.get("/table/news", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
-    const data = await newController.getAll();
+    const data = await newController.getAllnew();
 
     res.render("admin_table_new", { new: data });
     // hiển thị(render)
@@ -118,16 +118,39 @@ router.get("/table/news", async function (req, res, next) {
     // }
 
 });
+router.get("/table/news/insert", [authentication.checklogin], async function (req, res, next) {
+    res.render("admin_insert_news");
+});
+router.post("/insert_news", [upload.single('image')], async function (req, res, next) {
+    // thêm mới sp vào db
+    const { body } = req
 
 
+    // dấu... có td: thêm 1 thuốc tính vô thêm , đưa thuộc tính hình vào trong body
+    await newController.insert(body);
+
+    res.redirect("/admin/table/news");
+    //chuyển lại trang sản phẩm 
+});
+
+router.delete("/news/:id/delete", async function (req, res, next) {
+    // xóa 1 sản phẩm
+    const { id } = req.params;
+    console.log(id);
+    await newController.deleteeee(id);
+
+    res.json({ result: true });
+    // trả về kết quả xóas
+
+});
 //video
-router.get("/table/video", async function (req, res, next) {
+router.get("/table/video", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const products = await videoController.getAll();
 
     res.render("admin_table_video", { products: products });
 });
-router.get("/table/video/insert", async function (req, res, next) {
+router.get("/table/video/insert", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     res.render("admin_insert_video");
 
@@ -155,7 +178,7 @@ router.delete("/video/:id/delete", async function (req, res, next) {
 });
 
 //căn hộ
-router.get("/table/can-ho", async function (req, res, next) {
+router.get("/table/can-ho", [authentication.checklogin], async function (req, res, next) {
     // lấy danh sách sản phẩm từ database và hiển thị
     const products = await canhoController.getAll();
 

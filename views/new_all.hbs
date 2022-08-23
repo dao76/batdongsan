@@ -90,20 +90,20 @@
             <div class="container">
 
                 <div class="section-title1">
-                    <h2>TẤT CẢ VIDEO</h2>
+                    <h2>TẤT CẢ TIN TỨC</h2>
                     <h2><img src="/assets/img/kimanh/titlebg.png" alt="">
                     </h2>
 
                 </div>
 
                 <div class="row">
-                    {{#each products}}
+                    {{#each news}}
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="icon-box">
-                            <a href="https://batdongsanokimanh.herokuapp.com/video/{{this._id}}/detail"><img
+                            <a href="https://batdongsanokimanh.herokuapp.com/news/{{this._id}}/detail"><img
                                     class="card-img-top" src="{{this.image}}" height="200px" <h4
                                     style="margin-top: 5px;"><a style="color: red; font-weight: bold;"
-                                    href="">{{this.tieude}}</a>
+                                    href="">{{this.tennew}}</a>
                                 </h4></a>
                             </p>
                         </div>
@@ -228,19 +228,19 @@
                             <div class="address">
                                 <i class="ri-map-pin-line"></i>
                                 <h4>Địa chỉ chi nhánh Cộng hòa</h4>
-                                <p>Địa chỉ xxxxxxxxxx</p>
+                                <p>Địa chỉ :610 Đường Cộng Hòa, Phường 13, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam</p>
                             </div>
 
                             <div class="email">
                                 <i class="ri-mail-line"></i>
                                 <h4>Email</h4>
-                                <p>Tranquangniem@gmail.com</p>
+                                <p>Tranquangniem4696@gmail.com</p>
                             </div>
 
                             <div class="phone">
                                 <i class="ri-phone-line"></i>
                                 <h4>Call:</h4>
-                                <p>+84 00000000</p>
+                                <p>+84 0906 333 076</p>
                             </div>
 
                         </div>
@@ -249,34 +249,26 @@
 
                     <div class="col-lg-8 mt-5 mt-lg-0">
 
-                        <form action="" method="post" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="phone" name="phone" class="form-control" placeholder="Số Điện Thoại"
-                                        style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
-                                </div>
+                        <form class="form-group" action="https://batdongsanokimanh.herokuapp.com/sendmail" method="POST"
+                            id="myform">
+                            <input type="email" name="email" class="form-control" placeholder="Email của bạn"
+                                style="margin-bottom: 20px; height: 60px;border-radius: 3%;">
+                            <input type="name" name="name" class="form-control" placeholder="Họ Và Tên"
+                                style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
+                            <input type="phone" name="phone" class="form-control" placeholder="Số Điện Thoại"
+                                style="margin-bottom: 20px;  height: 60px;border-radius: 3%;">
+                            <div class="col-lg-3 cta-btn-container text-center">
+                                <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Gửi thông
+                                    tin</button>
                             </div>
-
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit" style="background-color: orangered;">Send
-                                    Message</button></div>
                         </form>
-
                     </div>
 
+                    <script>
+                        document.getElementById('myform').addEventListener('submit', function () {
+                            alert('Cảm ơn đã đăng ký, vui lòng chờ vài giây để chúng tôi xử lý nhận thông tin của bạn');
+                        });
+                    </script>
                 </div>
 
             </div>
@@ -319,11 +311,12 @@
                             <p style="margin-top: -30px;">Hotline: <b><a href="tel:0906333076" class="color"
                                         style="font-size:17px;">0906 333
                                         076</a></b></p>
-                            <p style="margin-top: -30px;"><b>Kim Anh Group(CN Cộng Hòa)</b></p>
+                            <p style="margin-top: -30px;"><b>Kim Oanh Group(CN Cộng Hòa)</b></p>
                             <p style="margin-top: -30px;"> Địa chỉ: 610 Đường Cộng Hòa, Phường 13,
                                 Tân
                                 Bình, Thành phố Hồ Chí Minh, Việt Nam</p>
-                            <p style="font-size:16px;line-height:1.7;margin-top: -30px;">Email: Tranquangniem@gmail.com
+                            <p style="font-size:16px;line-height:1.7;margin-top: -30px;">Email:
+                                Tranquangniem4696@gmail.com
                             </p>
 
                         </div>
@@ -356,6 +349,7 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-address">
 
 

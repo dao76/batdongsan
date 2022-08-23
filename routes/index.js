@@ -50,10 +50,9 @@ router.get("/profile", [authentication.checklogin], function (req, res, next) {
 router.get("/", async function (req, res, next) {
   // lấy danh sách sản phẩm từ database và hiển thị
   const data = await productController.getProducts();
-  const newdata = await newControler.getnews();
+  const newdata = await newControler.getNews();
   const videodata = await videoController.getVideos();
   const canhodata = await canhoController.getProducts();
-
   res.render("index", { products: data, news: newdata, video: videodata, canho: canhodata });
 
 
@@ -66,6 +65,14 @@ router.get("/all_duan", async function (req, res, next) {
 
 
 });
+router.get("/all_new", async function (req, res, next) {
+  // lấy danh sách sản phẩm từ database và hiển thị
+  const data = await newControler.getAllnew();
+
+  res.render("new_all", { news: data });
+
+
+});
 router.get("/all_video", async function (req, res, next) {
   // lấy danh sách sản phẩm từ database và hiển thị
   const data = await videoController.getAll();
@@ -74,6 +81,7 @@ router.get("/all_video", async function (req, res, next) {
 
 
 });
+
 router.post('/insert', async (req, res, next) => {
   const { body } = req
   console.log(body);

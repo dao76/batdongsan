@@ -80,17 +80,18 @@
         <section id="about" class="about">
             <div class="container">
                 <div class="section-title1">
-                    <h2 style="color: blue; font-size: 25px;">{{videos.tieude}}</h2>
+                    <h2 style="color: blue; font-size: 25px;">{{videos.tennew}}</h2>
                     </h2>
 
                 </div>
-                <div style="align-items: center;">
-                    <iframe width="660" height="415" style="justify-content: center; text-align: center;"
-                        src="{{videos.linkvideo}}" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                <p>{{videos.mieuta}}</p>
+                <p>{{videos.mieuta1}}</p>
+                <p>{{videos.mieuta2}}</p>
+                <div class="row__img-desc">
+                    <div class="img-desc">
+                        <img src="{{videos.image}}" alt="" style="border-radius: 1%" />
+                    </div>
                 </div>
-
             </div>
         </section>
 
@@ -116,7 +117,7 @@
                                         <a href="https://batdongsanokimanh.herokuapp.com/video/{{this._id}}/detail"><img
                                                 class="card-img-top" src="{{this.image}}" height="250px" <h4
                                                 style="margin-top: 5px;"><a style="color: #FF9900; font-weight: bold;"
-                                                href="">{{this.tieude}}</a>
+                                                href="">{{this.tennew}}</a>
                                             </h4></a>
 
 

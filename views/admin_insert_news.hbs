@@ -58,28 +58,16 @@
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsanokimanh.herokuapp.com/admin/table/news">Bản
-                                tin</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/news">Bản tin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsanokimanh.herokuapp.com/admin/table/du-an">Dự
-                                án</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/du-an">Dự án</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"
-                                href="https://batdongsanokimanh.herokuapp.com/admin/table/khach-hang">Khách hàng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="https://batdongsanokimanh.herokuapp.com/admin/table/video">Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://batdongsanokimanh.herokuapp.com/admin/table/can-ho">Căn
-                                hộ</a>
+                            <a class="nav-link" href="http://localhost:3000/admin/table/khach-hang">Khách hàng</a>
                         </li>
                     </ul>
                 </div>
-
 
                 <li class="nav-item sidebar-actions">
                     <div class="nav-link">
@@ -244,139 +232,125 @@
                         <h3 class="mb-0"> Hi, Quang Niệm
                         </h3>
                         <div class="d-flex">
-                            <button type="button" class="btn btn-sm ml-3 btn-success"> <a
-                                    href="http://localhost:3000/admin/table/news/insert">Thêm tin tức mới</a> </button>
+                            <button type="button" class="btn btn-sm ml-3 btn-success"> Thêm tin tức mới </button>
                         </div>
                     </div>
 
-                    <div class=" col-lg-12 stretch-card">
+                    <div class="col-lg-12 stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Danh sách Bản tin</h4>
 
                                 </p>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>tiêu đề tin tức</th>
+                                <div class="pagetitle">
+                                    <h1> Thêm tin tức</h1>
+                                    <nav>
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                                            <li class="breadcrumb-item">bảng</li>
+                                            <li class="breadcrumb-item active">tin tức </li>
+                                            <li class="breadcrumb-item active">thêm dữ liệu</li>
+                                        </ol>
+                                    </nav>
+                                </div><!-- End Page Title -->
+
+                                <form role="form" method="post" action="http://localhost:3000/admin/insert_news">
 
 
-                                                <th>Hành động</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {{#each new}}
-                                            <tr class="table-info">
-                                                <td>{{this.index}}</td>
-                                                <td>{{this.tennew}}</td>
-
-
-                                                <td>
-
-                                                    <a
-                                                        href="http://localhost:3000/admin/table/new/{{this._id}}/edit">edit</a>
-                                                    <button onclick="onClickDelete('{{this._id}}')" data-toggle="modal"
-                                                        data-target="#confirmModal" class="btn btn-link">Delete</button>
-                                                </td>
-
-                                            </tr>
-                                            {{/each }}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  Modals-->
-                    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel"></h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="panel-body">
-                                        <h3>Are you sure?</h3>
-                                        <div class="form-group modal-footer">
-                                            <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Cancel</button>
-                                            <button type="button" onclick="onDelete()"
-                                                class="btn btn-primary">Yes</button>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="">ảnh minh họa </label>
+                                        <input class="form-control" id="image" name="image" type="text" />
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label>Tiêu đề tin tức</label>
+                                        <input class="form-control" id="tennew" name="tennew" type="text" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>nội dung 1</label>
+                                        <input class="form-control" id="mieuta" name="mieuta" type="text" />
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>nội dung 2</label>
+                                        <input class="form-control" id="mieuta1" name="mieuta1" type="text" />
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>nội dung 3</label>
+                                        <input class="form-control" id="mieuta2" name="mieuta2" type="text" />
+
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="text-center">
+                                            <button type="submit" name="submit" onchange="ktra()" id="submit"
+                                                class="btn btn-primary">Lưu</button>
+                                        </div>
+                                </form>
                             </div>
+
+                            <script>
+                                const ktra = () => {
+                                    const name = document.getElementById('name').value;
+                                    const submit = document.getElementById('submit').value;
+
+                                    if (!name || name.trim().length == 0) {
+                                        submit.disabled = true;
+                                    } else {
+                                        submit.disabled = false;
+                                    }
+                                }
+                                const onChangeFile = () => {
+                                    const file = document.getElementById('image-file').files[0];
+                                    const reader = new FileReader();
+                                    reader.onload = e => {
+                                        document.getElementById('image-view').src = e.target.result;
+                                        document.getElementById('image-view').style.display = 'block';
+                                    }
+                                    reader.readAsDataURL(file);
+                                }
+                            </script>
+
                         </div>
+                        <footer class="footer">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright
+                                    ©
+                                    Datnenkimoanh.com.vn 2022</span>
+
+                            </div>
+                        </footer>
                     </div>
-                    <!-- End Modals-->
-
-                    <script>
-                        const edit = (id) => {
-                            // http://localhost:3000/san-pham/:id/edit
-                            window.location.href = `http://localhost:3000/admin/table/news/${id}/edit`
-                        }
-                        let deleted_id;
-                        const onClickDelete = (id) => {
-                            deleted_id = id;
-                        }
-                        const fetchAPI = async (url, option) => {
-                            const res = await fetch(url, option);
-                            return res.json();
-                        }
-                        const onDelete = async () => {
-                            let url = `http://localhost:3000/admin/news/${deleted_id}/delete`;
-                            const option = {
-                                method: 'delete',
-                                headers: { 'Content-Type': 'application/json' }
-                            }
-                            try {
-                                await fetchAPI(url, option);
-                                window.location.href = '/admin/table/news';
-                            } catch (e) { console.log('Delete error: ', e) }
-                        }
-                    </script>
-
+                    <!-- main-panel ends -->
                 </div>
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
-                            Datnenkimoanh.com.vn 2022</span>
-
-                    </div>
-                </footer>
+                <!-- page-body-wrapper ends -->
             </div>
-            <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-    </div>
 
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="/assets1/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="/assets1/vendors/chart.js/Chart.min.js"></script>
-    <script src="/assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.resize.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.categories.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.fillbetween.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.stack.js"></script>
-    <script src="/assets1/vendors/flot/jquery.flot.pie.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="/assets1/js/off-canvas.js"></script>
-    <script src="/assets1/js/hoverable-collapse.js"></script>
-    <script src="/assets1/js/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="/assets1/js/dashboard.js"></script>
-    <!-- End custom js for this page -->
+            <!-- container-scroller -->
+            <!-- plugins:js -->
+            <script src="/assets1/vendors/js/vendor.bundle.base.js"></script>
+            <!-- endinject -->
+            <!-- Plugin js for this page -->
+            <script src="/assets1/vendors/chart.js/Chart.min.js"></script>
+            <script src="/assets1/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.resize.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.categories.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.fillbetween.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.stack.js"></script>
+            <script src="/assets1/vendors/flot/jquery.flot.pie.js"></script>
+            <!-- End plugin js for this page -->
+            <!-- inject:js -->
+            <script src="/assets1/js/off-canvas.js"></script>
+            <script src="/assets1/js/hoverable-collapse.js"></script>
+            <script src="/assets1/js/misc.js"></script>
+            <!-- endinject -->
+            <!-- Custom js for this page -->
+            <script src="/assets1/js/dashboard.js"></script>
+            <!-- End custom js for this page -->
 </body>
 
 </html>
